@@ -45,7 +45,7 @@ let todosList = {
     if (completedTodo === totalTodos) {
       //=== when both terms should be identical
       for (let i = 0; i < totalTodos; i++) {
-        this.todos[i].completed = false; //if assigning osmehting then just 1 equal
+        this.todos[i].completed = false; //if assigning something then just 1 equal
       }
       //Case 2 - Otherwise, make everything true
     } else {
