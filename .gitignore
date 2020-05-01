@@ -1,0 +1,36 @@
+HELP.md
+bin
+target/
+kudos/.mvn
+!**/src/main/**
+!**/src/test/**
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+### IntelliJ IDEA ###
+BackEnd/.idea/
+.idea/libraries
+*.iws
+*.iml
+*.ipr
+.idea
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+### VS Code ###
+.vscode/
+### VM Crash logs ###
+hs_err_pid*
+### Package Files ###
+*.jar
+*.war
+*.ear
