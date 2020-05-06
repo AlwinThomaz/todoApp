@@ -36,24 +36,48 @@ let todosList = {
     let completedTodo = 0;
 
     //get number of completed todos
-    for (let i = 0; i < totalTodos; i++) {
-      if (this.todos[i].completed === true) {
+    // for (let i = 0; i < totalTodos; i++) {
+    //   if (this.todos[i].completed === true) {
+    //     completedTodo++;
+    //   }
+    // }
+    // improved method using callback fnc
+    this.todos.forEach(function (todo) {
+      if(todo.completed===true) {
         completedTodo++;
       }
-    }
-    //Case 1 - If everything's true, make everything false
-    if (completedTodo === totalTodos) {
-      //=== when both terms should be identical
-      for (let i = 0; i < totalTodos; i++) {
-        this.todos[i].completed = false; //if assigning something then just 1 equal
+    });
+
+    // //Case 1 - If everything's true, make everything false
+    // if (completedTodo === totalTodos) {
+    //   //=== when both terms should be identical
+    //   // for (let i = 0; i < totalTodos; i++) {
+    //   //   this.todos[i].completed = false; //if assigning something then just 1 equal
+    //   // }
+    //   this.todos.forEach(function (todo) {
+    //     todo.completed = false;
+    //   });
+    //   //Case 2 - Otherwise, make everything true
+    // } else {
+    //   // for (let i = 0; i < totalTodos; i++) {
+    //   //   this.todos[i].completed = true;
+    //   this.todos.forEach(function (todo) {
+    //     todo.completed = true;
+    //   });
+    // }
+
+    //improved format
+    this.todos.forEach(function (todo) {
+      // Case 1
+      if(completedTodo === totalTodos) {
+        todo.completed=false;
       }
-      //Case 2 - Otherwise, make everything true
-    } else {
-      for (let i = 0; i < totalTodos; i++) {
-        this.todos[i].completed = true;
+      // Case 2
+      else {
+        todo.completed=true;
       }
-    }
-  },
+    });
+  }
 };
 
 // old complex way
@@ -161,7 +185,7 @@ let view = {
       //check if element clicked is a delete button
       if (elementClicked.className === "deleteButton") {
         //Run handlers.deleteTodo(position)
-        // parseInt(elementClicked.parentNode.id); //paentNode.id is a string turn it into num by parseint
+        // parseInt(elementClicked.parentNode.id); //parentNode.id is a string turn it into num by parseint
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id)); //position = id
       }
     });

@@ -1,6 +1,6 @@
 
 //Higher Order Functions
-    // Functions that accepts other functions  ener
+    // Functions that accepts other functions
     // Enhance the behaviour of other functions
     // eg runWithDegugger, setTimeout, forEach & addEventListener
 
