@@ -147,24 +147,46 @@ let view = {
   displayTodo: function () {
     let todosUl = document.querySelector("ul");
     todosUl.innerHTML = ""; //clear out unordered list before adding the new 'li' elements
-    for (let i = 0; i < todosList.todos.length; i++) {
-      let todoLi = document.createElement("li");
+    // for (let i = 0; i < todosList.todos.length; i++) {
+    //   let todoLi = document.createElement("li");
+    //
+    //   //each li element hould show .completed
+    //   let todoTextWithCompletion = "";
+    //   let todo = todosList.todos[i];
+    //   if (todo.completed === true) {
+    //     todoTextWithCompletion = "(x)" + todo.todoText; //strings can be combined with plus operator
+    //   } else {
+    //     todoTextWithCompletion = "( )" + todo.todoText;
+    //   }
+    //   todoLi.id = i; //each li has an id that has the todo position
+    //   // each li element should contain .todoText
+    //   todoLi.textContent = todoTextWithCompletion;
+    //   // todoLi.textContent = todoList.todos[i].todoText; //sets it to the todoText property of each of the todos object inside of todos array
+    //   todoLi.appendChild(this.createDeleteButton());
+    //   todosUl.appendChild(todoLi);
+    // }
 
-      //each li element hould show .completed
-      let todoTextWithCompletion = "";
-      let todo = todosList.todos[i];
-      if (todo.completed === true) {
-        todoTextWithCompletion = "(x)" + todo.todoText; //strings can be combined with plus operator
-      } else {
-        todoTextWithCompletion = "( )" + todo.todoText;
-      }
-      todoLi.id = i; //each li has an id that has the todo position
-      // each li element should contain .todoText
-      todoLi.textContent = todoTextWithCompletion;
-      // todoLi.textContent = todoList.todos[i].todoText; //sets it to the todoText property of each of the todos object inside of todos array
-      todoLi.appendChild(this.createDeleteButton());
-      todosUl.appendChild(todoLi);
-    }
+    // this -> refers to the view object
+    // forEach(callback, this) -> shown in the example below, from forEach({....}) is the entirety of the call back function
+    // then you add a comma and do 'this' to reference the view object and utilise its properties
+    // otherwise referencing 'this.' inside the callback function by itself does not work without having 'this' as -> forEach({....}, this)
+
+    //improved method using callback fnc
+    todosList.todos.forEach(function (todo, position) {
+        let todoLi = document.createElement("li");
+        let todoTextWithCompletion = "";
+
+        if (todo.completed === true) {
+          todoTextWithCompletion = "(x)" + todo.todoText; //strings can be combined with plus operator
+        } else {
+          todoTextWithCompletion = "( )" + todo.todoText;
+        }
+
+        todoLi.id = position;
+        todoLi.textContent = todoTextWithCompletion;
+        todoLi.appendChild(this.createDeleteButton());
+        todosUl.appendChild(todoLi);
+    }, this); // check line 172 comment
   },
   createDeleteButton: function () {
     let deleteButton = document.createElement("button");
