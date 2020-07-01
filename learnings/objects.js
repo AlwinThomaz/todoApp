@@ -31,3 +31,9 @@ let alwin = {
 }
 
 console.log(alwin.sayName());
+
+let todoObject ={
+    size: 5,
+    dateCreated : '28/03/2020',
+    priority: 'high'
+}

@@ -3,7 +3,7 @@ let todo =['item 1', 'item2', 'item3'];
 console.log(todo);
 
 //add
-todo.push('hello');
+todo.push('item4');
 console.log(todo);
 
 //read

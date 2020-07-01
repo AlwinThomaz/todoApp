@@ -1,16 +1,16 @@
-function logTenNumbers() {
+function logTenTodos() {
     for (i = 0; i < 10; i++) {
       console.log(i);
     }
   }
   
-  function runWithDebugger (ourFunction) {
+  function runWithDebugger (myFunction) {
       debugger;
-      ourFunction();
+      myFunction();
   }
   
   // to call this
-  runWithDebugger(function logTenNumbers() {
+  runWithDebugger(function logTenTodos() {
       for (i = 0; i < 10; i++) {
           console.log(i);
         }

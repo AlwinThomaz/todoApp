@@ -1,14 +1,14 @@
-let students = ["jon", "matt", "harris"];
+let friends = ["jon", "matt", "harris"];
 
 function logName(name) {
   console.log(name);
 }
 
-students.forEach(logName);
+friends.forEach(logName);
 
 //can also do
 
-students.forEach(function logName(name) {
+friends.forEach(function logName(name) {
   console.log(name);
 });
 
@@ -20,8 +20,8 @@ function forEach(myArray, myFunction) {
   }
 }
 
-forEach(students, function (student) {
-  console.log(student);
+forEach(friends, function (friend) {
+  console.log(friend);
 });
 
-forEach(students, logName);
+forEach(friends, logName);
