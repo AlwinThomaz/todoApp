@@ -10,7 +10,7 @@ console.log(todo);
 console.log(todo[3]);
 
 //update
-todo[3] = 'item4';
+todo[3] = 'item5';
 console.log(todo);
 
 //delete
