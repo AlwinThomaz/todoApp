@@ -1,4 +1,4 @@
-// JS primitive data types
+// JS primitive data types (not an object and not a data type, immutable (canot be altered))
 //String
 //Number
 //Boolean
